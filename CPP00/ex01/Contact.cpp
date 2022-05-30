@@ -6,11 +6,23 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 16:09:23 by ddordain          #+#    #+#             */
-/*   Updated: 2022/05/27 16:21:24 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/05/30 18:24:51 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
+#include "PhoneBook.hpp"
+
+// definition of constructor & destructor
+Contact::Contact() {
+    PRINT("++ contact");
+    return ;
+}
+
+Contact::~Contact() {
+    PRINT("-- contact");
+    return ;
+}
 
 // definition of the getters
 string	Contact::get_firstName() {
@@ -34,7 +46,7 @@ string	Contact::get_darkestSecret() {
 }
 
 // definition of the setters
-void	Contact::set_firstName(string str) {
+void	Contact::set_firstName(string &str) {
 	this->_firstName = str;
 }
 

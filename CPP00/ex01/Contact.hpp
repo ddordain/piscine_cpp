@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 15:38:25 by ddordain          #+#    #+#             */
-/*   Updated: 2022/05/27 16:19:13 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/05/30 18:20:15 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,11 @@ class   Contact {
 	string  get_phoneNumber();
 	string  get_darkestSecret();
 
-	void	set_firstName(str);
-	void	set_lastName(str);
-	void	set_nickname(str);
-	void	set_phoneNumber(str);
-	void	set_darkestSecret(str);
+	void	set_firstName(string &str);
+	void	set_lastName(string str);
+	void	set_nickname(string str);
+	void	set_phoneNumber(string str);
+	void	set_darkestSecret(string str);
 };
 
 #endif
