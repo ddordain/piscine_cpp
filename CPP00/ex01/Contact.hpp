@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 15:38:25 by ddordain          #+#    #+#             */
-/*   Updated: 2022/05/30 18:20:15 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/05/31 12:23:01 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,27 +20,27 @@ typedef std::string string;
 
 class   Contact {
 	private:
-	string  _firstName;
-	string  _lastName;
-	string  _nickname;
-	string  _phoneNumber;
-	string  _darkestSecret;
+	string  firstName_;
+	string  lastName_;
+	string  nickname_;
+	string  phoneNumber_;
+	string  darkestSecret_;
 
 	public:
 	Contact(); // constructor
 	~Contact(); // destructor
 
-	string  get_firstName();
-	string  get_lastName();
-	string  get_nickname();
-	string  get_phoneNumber();
-	string  get_darkestSecret();
+	string  getFirstName();
+	string  getLastName();
+	string  getNickname();
+	string  getPhoneNumber();
+	string  getDarkestSecret();
 
-	void	set_firstName(string &str);
-	void	set_lastName(string str);
-	void	set_nickname(string str);
-	void	set_phoneNumber(string str);
-	void	set_darkestSecret(string str);
+	void	setFirstName(string &str);
+	void	setLastName(string str);
+	void	setNickname(string str);
+	void	setPhoneNumber(string str);
+	void	setDarkestSecret(string str);
 };
 
 #endif

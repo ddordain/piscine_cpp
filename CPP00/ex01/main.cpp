@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 17:31:34 by ddordain          #+#    #+#             */
-/*   Updated: 2022/05/30 18:10:47 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/05/31 12:17:01 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,26 @@
 #include "PhoneBook.hpp"
 
 int main() {
-    Phonebook   phonebook;
-    string      userCommand;
+	Phonebook   phonebook;
+	string      userCommand;
    
-    PRINT("================================");
-    PRINT("=== THIS IS YOUR PHONEBOOK  ====");
-    PRINT("================================");
+	PRINT("================================");
+	PRINT("=== THIS IS YOUR PHONEBOOK  ====");
+	PRINT("================================");
 
-   while (1) {
-        std::getline(std::cin, userCommand);
-        
-        if (userCommand == "ADD") {phonebook.add();}
-        else {break;}
+   while (true) {
+		std::getline(std::cin, userCommand);
+		if (std::cin.eof()) {phonebook.exit();}
+		if (userCommand == "ADD") {phonebook.add();}
+		else if (userCommand == "SEARCH") {phonebook.search();}
+		else if (userCommand == "EXIT") {phonebook.exit();}
+		else {
+			PRINT("=======================================================");
+			PRINT("===      Please type ADD, SEARCH or EXIT            ===");
+			PRINT("===      These are the only recognized commands     ===");
+			PRINT("===      You can still play with your keyboard...   ===");
+			PRINT("=======================================================");
+		}
    }
+   return (EXIT_SUCCESS);
 }

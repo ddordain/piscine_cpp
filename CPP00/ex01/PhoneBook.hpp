@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 11:38:32 by ddordain          #+#    #+#             */
-/*   Updated: 2022/05/30 18:26:42 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/05/31 12:24:06 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,16 @@
 
 class   Phonebook {
 	private:
-	Contact	_ContactList[8];
-	int		_index;
-	int		_numberContactAdded;
+	Contact	contactList_[8];
+	int		indexContact_;
 
 	public:
 	Phonebook(); // constructor
 	~Phonebook(); // destructor
 
-	int	add();
-	int	search();
-	int	exit();
+	void	add();
+	void	search();
+	void	exit();
 };
 
 #endif

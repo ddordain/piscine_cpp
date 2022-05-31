@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 16:09:23 by ddordain          #+#    #+#             */
-/*   Updated: 2022/05/30 18:24:51 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/05/31 12:23:24 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,43 +25,43 @@ Contact::~Contact() {
 }
 
 // definition of the getters
-string	Contact::get_firstName() {
-	return (this->_firstName);
+string	Contact::getFirstName() {
+	return (this->firstName_);
 }
 
-string	Contact::get_lastName() {
-	return (this->_lastName);
+string	Contact::getLastName() {
+	return (this->lastName_);
 }
 
-string	Contact::get_nickname() {
-	return (this->_nickname);
+string	Contact::getNickname() {
+	return (this->nickname_);
 }
 
-string	Contact::get_phoneNumber() {
-	return (this->_phoneNumber);
+string	Contact::getPhoneNumber() {
+	return (this->phoneNumber_);
 }
 
-string	Contact::get_darkestSecret() {
-	return (this->_darkestSecret);
+string	Contact::getDarkestSecret() {
+	return (this->darkestSecret_);
 }
 
 // definition of the setters
-void	Contact::set_firstName(string &str) {
-	this->_firstName = str;
+void	Contact::setFirstName(string &str) {
+	this->firstName_ = str;
 }
 
-void	Contact::set_lastName(string str) {
-	this->_lastName = str;
+void	Contact::setLastName(string str) {
+	this->lastName_ = str;
 }
 
-void	Contact::set_nickname(string str) {
-	this->_nickname = str;
+void	Contact::setNickname(string str) {
+	this->nickname_ = str;
 }
 
-void	Contact::set_phoneNumber(string str) {
-	this->_phoneNumber = str;
+void	Contact::setPhoneNumber(string str) {
+	this->phoneNumber_ = str;
 }
 
-void	Contact::set_darkestSecret(string str) {
-	this->_darkestSecret = str;
+void	Contact::setDarkestSecret(string str) {
+	this->darkestSecret_ = str;
 }
