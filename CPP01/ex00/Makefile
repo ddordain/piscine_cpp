@@ -6,14 +6,16 @@
 #    By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/25 15:36:31 by ddordain          #+#    #+#              #
-#    Updated: 2022/06/01 20:32:25 by ddordain         ###   ########.fr        #
+#    Updated: 2022/06/01 20:33:09 by ddordain         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	Account
+NAME	=	BraiiiiiiinnnzzzZ
 
-SRCS	=	test.cpp \
-			Account.cpp
+SRCS	=	main.cpp \
+			Zombie.cpp \
+			newZombie.cpp \
+			randomChump.cpp
 
 OBJS	= $(SRCS:%.cpp=$(OBJ)/%.o)
 

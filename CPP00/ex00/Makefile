@@ -6,11 +6,11 @@
 #    By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/25 15:36:31 by ddordain          #+#    #+#              #
-#    Updated: 2022/06/01 15:09:08 by ddordain         ###   ########.fr        #
+#    Updated: 2022/06/01 20:32:08 by ddordain         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =		megaphone
+NAME	=	megaphone
 
 SRCS	=	megaphone.cpp
 
