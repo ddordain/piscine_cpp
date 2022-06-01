@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 17:25:02 by ddordain          #+#    #+#             */
-/*   Updated: 2022/06/01 14:58:06 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/06/01 16:14:43 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void Phonebook::add() {
 	PRINT("+++ CONTACT ADDED +++")
 
 	this->indexContact_++;
-    if (this->indexTable_ <= 8) {this->indexTable_++ ;}
+    if (this->indexTable_ <= 7) {this->indexTable_++ ;}
 
 }
 
@@ -80,7 +80,8 @@ void	Phonebook::search() {
         std::cout << std::setfill(' ') << std::setw(10) << "FIRST NAME" << "|";
         std::cout << std::setfill(' ') << std::setw(10) << "LAST NAME" << "|";
         std::cout << std::setfill(' ') << std::setw(10) << "NICKNAME" << "|" << std::endl;
-        
+        PRINT("____________________________________________");
+
 	    for (int i = 0; i < this->indexTable_ ; i++) {
             std::cout << "|" << std::setfill(' ') << std::setw(10) << i + 1 << "|";
 
