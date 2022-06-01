@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 16:09:23 by ddordain          #+#    #+#             */
-/*   Updated: 2022/05/31 12:23:24 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/06/01 14:32:06 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,53 +15,51 @@
 
 // definition of constructor & destructor
 Contact::Contact() {
-    PRINT("++ contact");
-    return ;
+	return ;
 }
 
 Contact::~Contact() {
-    PRINT("-- contact");
-    return ;
+	return ;
 }
 
 // definition of the getters
-string	Contact::getFirstName() {
+std::string	Contact::getFirstName() const {
 	return (this->firstName_);
 }
 
-string	Contact::getLastName() {
+std::string	Contact::getLastName() const {
 	return (this->lastName_);
 }
 
-string	Contact::getNickname() {
+std::string	Contact::getNickname() const {
 	return (this->nickname_);
 }
 
-string	Contact::getPhoneNumber() {
+std::string	Contact::getPhoneNumber() const {
 	return (this->phoneNumber_);
 }
 
-string	Contact::getDarkestSecret() {
+std::string	Contact::getDarkestSecret() const {
 	return (this->darkestSecret_);
 }
 
 // definition of the setters
-void	Contact::setFirstName(string &str) {
+void	Contact::setFirstName(std::string &str) {
 	this->firstName_ = str;
 }
 
-void	Contact::setLastName(string str) {
+void	Contact::setLastName(std::string &str) {
 	this->lastName_ = str;
 }
 
-void	Contact::setNickname(string str) {
+void	Contact::setNickname(std::string &str) {
 	this->nickname_ = str;
 }
 
-void	Contact::setPhoneNumber(string str) {
+void	Contact::setPhoneNumber(std::string &str) {
 	this->phoneNumber_ = str;
 }
 
-void	Contact::setDarkestSecret(string str) {
+void	Contact::setDarkestSecret(std::string &str) {
 	this->darkestSecret_ = str;
 }

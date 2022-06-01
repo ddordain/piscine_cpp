@@ -6,11 +6,12 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 19:27:25 by ddordain          #+#    #+#             */
-/*   Updated: 2022/05/25 19:27:33 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/06/01 15:10:28 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <string>
 #include <cstring>
 
 void    print_str_uppercase(char *str)

@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 15:38:25 by ddordain          #+#    #+#             */
-/*   Updated: 2022/05/31 12:23:01 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/06/01 14:31:15 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,31 +16,29 @@
 #include <iostream>
 #include <string>
 
-typedef std::string string;
-
 class   Contact {
 	private:
-	string  firstName_;
-	string  lastName_;
-	string  nickname_;
-	string  phoneNumber_;
-	string  darkestSecret_;
+	std::string  firstName_;
+	std::string  lastName_;
+	std::string  nickname_;
+	std::string  phoneNumber_;
+	std::string  darkestSecret_;
 
 	public:
 	Contact(); // constructor
 	~Contact(); // destructor
 
-	string  getFirstName();
-	string  getLastName();
-	string  getNickname();
-	string  getPhoneNumber();
-	string  getDarkestSecret();
+	std::string  getFirstName() const;
+	std::string  getLastName() const;
+	std::string  getNickname() const;
+	std::string  getPhoneNumber() const;
+	std::string  getDarkestSecret() const;
 
-	void	setFirstName(string &str);
-	void	setLastName(string str);
-	void	setNickname(string str);
-	void	setPhoneNumber(string str);
-	void	setDarkestSecret(string str);
+	void	setFirstName(std::string &str);
+	void	setLastName(std::string &str);
+	void	setNickname(std::string &str);
+	void	setPhoneNumber(std::string &str);
+	void	setDarkestSecret(std::string &str);
 };
 
 #endif

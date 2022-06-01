@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 17:31:34 by ddordain          #+#    #+#             */
-/*   Updated: 2022/05/31 12:17:01 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/06/01 12:05:58 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int main() {
 	Phonebook   phonebook;
-	string      userCommand;
+	std::string      userCommand;
    
 	PRINT("================================");
 	PRINT("=== THIS IS YOUR PHONEBOOK  ====");

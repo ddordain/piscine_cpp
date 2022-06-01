@@ -6,7 +6,7 @@
 #    By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/25 15:36:31 by ddordain          #+#    #+#              #
-#    Updated: 2022/05/30 17:36:05 by ddordain         ###   ########.fr        #
+#    Updated: 2022/06/01 15:06:32 by ddordain         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,11 +16,11 @@ SRCS	=	main.cpp \
 			PhoneBook.cpp \
 			Contact.cpp \
 
-OBJS	= $(SRCS:%.cpp=$(BIN)/%.o)
+OBJS	= $(SRCS:%.cpp=$(OBJ)/%.o)
 
 DEP = $(OBJS:%.o=%.d)
 
-BIN		= ./bin
+OBJ		= ./obj
 
 CXX	= c++
 
@@ -36,16 +36,16 @@ $(NAME):	$(OBJS)
 
 -include $(DEP)
 	
-$(BIN)/%.o:		%.cpp
+$(OBJ)/%.o:		%.cpp
 	mkdir -p $(@D)
-	$(CXX) $(CXXFLAGS) -MMD -o $@ -c $<
+	$(CXX) $(CXXFLAGS) -o $@ -c $<
 
 clean:
-	$(RM) $(BIN)/$(OBJS)
+	$(RM) $(OBJ)/$(OBJS)
 
 fclean:	clean
 	$(RM) $(NAME)
-	rm -r $(BIN)
+	rm -r $(OBJ)
 
 re:	fclean $(NAME)
 
