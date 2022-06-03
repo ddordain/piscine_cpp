@@ -1,18 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   randomChump.cpp                                    :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/01 21:00:06 by ddordain          #+#    #+#             */
-/*   Updated: 2022/06/03 12:16:04 by ddordain         ###   ########.fr       */
+/*   Created: 2022/06/01 20:38:13 by ddordain          #+#    #+#             */
+/*   Updated: 2022/06/03 12:49:46 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-void randomChump(std::string name) {
-    Zombie	tmp_zombie(name);
-    tmp_zombie.annonce();
+Zombie::Zombie() { // constructor 
+	return ;
+}
+
+Zombie::Zombie(std::string name) {
+    this->name_ = name;
+}
+
+Zombie::~Zombie() {
+    PRINT(this->name_ << " is DEAD.... a second time ^^");
+}
+
+void	Zombie::annonce() {
+    PRINT(this->name_ << ": BraiiiiiiinnnzzzZ...");
+}
+
+void	Zombie::setName(std::string name) {
+	this->name_ = name;
 }
