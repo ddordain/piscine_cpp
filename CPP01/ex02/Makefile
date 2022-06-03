@@ -6,15 +6,13 @@
 #    By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/25 15:36:31 by ddordain          #+#    #+#              #
-#    Updated: 2022/06/03 12:55:53 by ddordain         ###   ########.fr        #
+#    Updated: 2022/06/03 12:56:06 by ddordain         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	MoreBraiiiiiiinnnzzzZ
+NAME	=	HiThisIsBrain
 
 SRCS	=	main.cpp \
-			Zombie.cpp \
-			zombieHorde.cpp \
 
 OBJS	= $(SRCS:%.cpp=$(OBJ)/%.o)
 
