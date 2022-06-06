@@ -1,0 +1,6 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory '/home/ddordain/Documents/piscine_cpp/CPP01'
+make: Leaving directory '/home/ddordain/Documents/piscine_cpp/CPP01'
+ 
+make: *** No targets specified and no makefile found.  Stop.
+
