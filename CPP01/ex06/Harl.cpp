@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 16:03:40 by ddordain          #+#    #+#             */
-/*   Updated: 2022/06/06 17:08:14 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/06/06 23:04:28 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,8 @@ void	Harl::complain(std::string level) {
 	std::string	stringTable[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	// void	(Harl::*f[4]) (void) = {&Harl::debug_, &Harl::info_, &Harl::warning_, &Harl::error_};
 
-	int i = 0;
-	while (level != stringTable[i] && i < 4) {
-		filter(i);
-		i++;
+	for (int i = 0; i < 4; i++) {
+
 	}
 }
 
