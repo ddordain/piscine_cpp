@@ -1,36 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/06 23:05:35 by ddordain          #+#    #+#             */
-/*   Updated: 2022/06/07 16:27:33 by ddordain         ###   ########.fr       */
+/*   Created: 2022/06/07 12:57:57 by ddordain          #+#    #+#             */
+/*   Updated: 2022/06/07 15:16:59 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-#define FIXED_HPP
-
 #include <iostream>
-#include <cstdlib>
-#include <string>
+#include "Fixed.hpp"
 
-#define PRINT(X) std::cout << X << std::endl;
-
-class Fixed {
-	private:
-	int					fixed_;
-	static int const	bits_ = 8;
-
-	public:
-	Fixed(); // constructor
-	~Fixed(); // destructor
-	Fixed(const Fixed& copy); // copy constructor
-	Fixed&	operator=(const Fixed& fixed); // = operator
-
-	int		getRawBits() const;
-};
-
-#endif
+int main( void ) {
+Fixed a; // Default constructor called
+Fixed b( a ); // Copy constructor called (i do not use the operator = to assign)
+Fixed c; // Default constructor called
+c = b;
+std::cout << a.getRawBits() << std::endl;
+std::cout << b.getRawBits() << std::endl;
+std::cout << c.getRawBits() << std::endl;
+return 0;
+}
