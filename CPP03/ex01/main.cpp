@@ -5,24 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/07 19:36:10 by ddordain          #+#    #+#             */
-/*   Updated: 2022/06/08 00:21:28 by ddordain         ###   ########.fr       */
+/*   Created: 2022/06/08 00:45:18 by ddordain          #+#    #+#             */
+/*   Updated: 2022/06/08 00:45:37 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main() {
-
-	ClapTrap clap("clap");
-	ClapTrap trap("trap");
-
-	trap.attack("clap");
-	clap.takeDamage(trap.getAttackDamage());
-	clap.beRepaired(9);
-	clap.attack("trap");
-	trap.takeDamage(5);
-	trap.takeDamage(5);
-	trap.takeDamage(5);
-	return (0);
+	return 0;
 }

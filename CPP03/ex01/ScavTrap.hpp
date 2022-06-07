@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/07 19:36:10 by ddordain          #+#    #+#             */
-/*   Updated: 2022/06/08 00:21:28 by ddordain         ###   ########.fr       */
+/*   Created: 2022/06/08 00:24:44 by ddordain          #+#    #+#             */
+/*   Updated: 2022/06/08 00:31:25 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef SCAV_TRAP_HPP
+#define SCAV_TRAP_HPP
+
 #include "ClapTrap.hpp"
 
-int main() {
+class ScavTrap : public ClapTrap {
+	public:
+		ScavTrap();
+		ScavTrap(const std::string name);
+		ScavTrap(const ScavTrap&);
+		~ScavTrap();
+	
+		ScavTrap&	operator =(const ScavTrap&);
 
-	ClapTrap clap("clap");
-	ClapTrap trap("trap");
+		void	attack();
+		void	guardGate();
+	private:
 
-	trap.attack("clap");
-	clap.takeDamage(trap.getAttackDamage());
-	clap.beRepaired(9);
-	clap.attack("trap");
-	trap.takeDamage(5);
-	trap.takeDamage(5);
-	trap.takeDamage(5);
-	return (0);
-}
+};
+
+#endif
