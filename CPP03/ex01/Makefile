@@ -6,7 +6,7 @@
 #    By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/25 15:36:31 by ddordain          #+#    #+#              #
-#    Updated: 2022/06/07 19:36:37 by ddordain         ###   ########.fr        #
+#    Updated: 2022/06/08 12:19:02 by ddordain         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@ NAME	=	a.out
 
 SRCS	=	main.cpp \
 			ClapTrap.cpp \
+			ScavTrap.cpp \
 
 OBJS	= $(SRCS:%.cpp=$(OBJ)/%.o)
 

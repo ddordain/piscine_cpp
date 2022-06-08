@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 00:31:16 by ddordain          #+#    #+#             */
-/*   Updated: 2022/06/08 01:03:24 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/06/08 12:24:37 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name, 100, 50, 20) {
 	PRINT("+++ CALL CONSTRUCTOR SCAVTRAP with  name +++");
 }
 
-ScavTrap::ScavTrap(const ScavTrap& copy) {
+ScavTrap::ScavTrap(const ScavTrap& copy) : ClapTrap(copy) {
 	*this = copy;
 	PRINT("+++ CALL COPY CONSTRUCTOR SCAVTRAP +++");
 }
@@ -54,22 +54,20 @@ ScavTrap&	ScavTrap::operator =(const ScavTrap& scavtrap) {
 ** --------------------------------- METHODS ----------------------------------
 */
 
-bool	ClapTrap::isAlive() {
-	if (this->getHitPoints() > 0) {
-		return (true);
+void	ScavTrap::attack(const std::string& target) {
+	if (this->isAlive() == false) {
+		PRINT(this->getName() << " cannot attack because he is dead");
+	} else if (this->hasEnoughEnergy() == false) {
+		PRINT(this->getName() << " cannot attack because he is out of energy");
 	} else {
-		return (false);
+		PRINT(this->getName() << " has ULTED " << target << " causing " << this->getAttackDamage() << " TONS of damage");
+		this->energyPoints_--;
 	}
 }
 
-bool	ClapTrap::hasEnoughEnergy() {
-	if (this->getEnergyPoints() >= 1) {
-		return (true);
-	} else {
-		return (false);
-	}
+void	ScavTrap::guardGate() {
+	PRINT(this->getName() << " is entered in mode Gate Keeper, you shall not pass.");
 }
-
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------

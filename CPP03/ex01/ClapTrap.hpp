@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 19:02:24 by ddordain          #+#    #+#             */
-/*   Updated: 2022/06/08 00:41:03 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/06/08 12:05:49 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ class ClapTrap {
 		std::string	getName() const;
 		int			getHitPoints() const;
 		int			getEnergyPoints() const;
-		int			getAttackDamage() const;
+		int		 	getAttackDamage() const;
 
-	private:
+	protected: //change from private to protected to let ScavTrap access it.
 		std::string	name_;
 		int			hitPoints_;
 		int			energyPoints_;
