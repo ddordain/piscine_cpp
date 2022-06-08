@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 19:02:20 by ddordain          #+#    #+#             */
-/*   Updated: 2022/06/08 14:45:56 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/06/08 15:15:46 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ ClapTrap::ClapTrap(std::string name) : name_(name), hitPoints_(10), energyPoints
 // with all paramaters
 ClapTrap::ClapTrap(std::string name, int hitPoint, int energyPoint, int attackDamage) {
 	this->name_ = name;
-	PRINT("+++ call ClapTrap constructor for ScavTrap +++ " << this->getName() << " has joined the room");
+	PRINT("+++ call ClapTrap constructor with parameters +++ " << this->getName() << " has joined the room");
 	this->hitPoints_ = hitPoint;
 	this->energyPoints_ = energyPoint;
 	this->attackDamage_ = attackDamage;

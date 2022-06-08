@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 19:02:20 by ddordain          #+#    #+#             */
-/*   Updated: 2022/06/07 20:57:08 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/06/08 14:36:48 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ ClapTrap::ClapTrap(std::string name) : name_(name), hitPoints_(10), energyPoints
 
 //copy constructor
 ClapTrap::ClapTrap(const ClapTrap& copy) {
+	if (this == &copy) {return ;}
 	*this = copy;
 	PRINT("+++ call copy constructor +++");
 }
