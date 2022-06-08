@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 00:31:16 by ddordain          #+#    #+#             */
-/*   Updated: 2022/06/08 12:24:37 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/06/08 12:54:14 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name, 100, 50, 20) {
 	PRINT("+++ CALL CONSTRUCTOR SCAVTRAP with  name +++");
 }
 
-ScavTrap::ScavTrap(const ScavTrap& copy) : ClapTrap(copy) {
+ScavTrap::ScavTrap(const ScavTrap& copy) : ClapTrap() {
 	*this = copy;
 	PRINT("+++ CALL COPY CONSTRUCTOR SCAVTRAP +++");
 }
@@ -35,7 +35,7 @@ ScavTrap::ScavTrap(const ScavTrap& copy) : ClapTrap(copy) {
 */
 
 ScavTrap::~ScavTrap() {
-	PRINT("--- CALL DESTRUCTOR SCAVTRAP ---");
+	PRINT("--- CALL DESTRUCTOR SCAVTRAP --- " << this->getName());
 }
 
 /*
@@ -67,6 +67,14 @@ void	ScavTrap::attack(const std::string& target) {
 
 void	ScavTrap::guardGate() {
 	PRINT(this->getName() << " is entered in mode Gate Keeper, you shall not pass.");
+}
+
+void	ScavTrap::realTarget(ScavTrap target) {
+	PRINT(target.getName() << " is targeted by " << this->getName() << " and had his attacked dmg reduced by 5");
+	target.attackDamage_ -= 5;
+	PRINT("hp: " << target.getHitPoints());
+	PRINT("ep: " <<target.getEnergyPoints());
+	PRINT("ad: " << target.getAttackDamage());
 }
 
 /*

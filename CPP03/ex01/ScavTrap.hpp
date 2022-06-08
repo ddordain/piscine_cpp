@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 00:24:44 by ddordain          #+#    #+#             */
-/*   Updated: 2022/06/08 12:21:21 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/06/08 12:42:30 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class ScavTrap : public ClapTrap {
 
 		void	attack(const std::string& target);
 		void	guardGate();
+		void	realTarget(ScavTrap);
 	private:
 
 };
