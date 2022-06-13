@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 14:48:20 by ddordain          #+#    #+#             */
-/*   Updated: 2022/06/08 15:21:00 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/06/08 18:33:26 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-DiamondTrap::DiamondTrap (void) : ClapTrap("no_name_clap_name", 100, 50, 30), ScavTrap(), FragTrap(), name("no_name") {
+DiamondTrap::DiamondTrap (void) : ClapTrap("no_name_clap_name", 100, 50, 30), ScavTrap(), FragTrap(), name_("no_name") {
 	PRINT("+++Call constructor of DIAMOND");
 }
 
-DiamondTrap::DiamondTrap (const std::string name) : ClapTrap(name + "_clap_name", 100, 50, 30), ScavTrap(), FragTrap(), name(name) {
+DiamondTrap::DiamondTrap (const std::string name) : ClapTrap(name + "_clap_name", 100, 50, 30), ScavTrap(), FragTrap(), name_(name) {
 	PRINT("+++call constructor of DIAMOND with NAME :  " << this->getName());
 }
 
@@ -55,7 +55,7 @@ DiamondTrap&	DiamondTrap::operator =(const DiamondTrap& diamond) {
 ** --------------------------------- METHODS ----------------------------------
 */
 void	DiamondTrap::whoAmI() const {
-	PRINT("Name :" << this->name << " ClapTrap name : "<< this->ClapTrap::name_);
+	PRINT("Name :" << this->name_ << " ClapTrap name : "<< this->ClapTrap::name_);
 }
 
 void	DiamondTrap::attack (const std::string& target) {

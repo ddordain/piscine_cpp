@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 14:41:54 by ddordain          #+#    #+#             */
-/*   Updated: 2022/06/08 14:47:54 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/06/08 18:32:26 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 class DiamondTrap : public ScavTrap, public FragTrap
 {
 	private:
-		std::string		name;
+		std::string		name_;
 	public:
 		DiamondTrap (void);
 		DiamondTrap (const DiamondTrap& copy);
