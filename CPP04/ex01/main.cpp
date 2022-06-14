@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 17:11:27 by ddordain          #+#    #+#             */
-/*   Updated: 2022/06/13 18:27:14 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/06/14 11:27:03 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,30 +16,29 @@
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
 
+#define TAB_SIZE 4
+
 int main()
 {
-const Animal* meta = new Animal();
 const Animal* j = new Dog();
 const Animal* i = new Cat();
-std::cout << j->getType() << " " << std::endl;
-std::cout << i->getType() << " " << std::endl;
-i->makeSound(); //will output the cat sound!
-j->makeSound();
-meta->makeSound();
-
-PRINT("==========================================");
-
-const WrongAnimal* meta2 = new WrongAnimal();
-const WrongAnimal* k = new WrongCat();
-std::cout << i->getType() << " " << std::endl;
-k->makeSound(); //will output the cat sound!
-meta2->makeSound();
-
+delete j;//should not create a leak
 delete i;
-delete j;
-delete k;
-delete meta;
-delete meta2;
+
+	Animal*	animalTable[TAB_SIZE];
+
+	for (int i = 0; i < TAB_SIZE ; i++) {
+		if (i % 2 == 0) {
+			animalTable[i] = new Dog();
+		} else if (i % 2 == 1) {
+			animalTable[i] = new Cat();
+		}
+	}
+
+	PRINT("table list");
+	for (int i = 0; i < TAB_SIZE; i++) {
+		PRINT("animal " << i + 1 << " : " << animalTable[i]->getType());
+	}
 
 return 0;
 }

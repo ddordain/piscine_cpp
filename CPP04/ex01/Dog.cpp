@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 17:25:01 by ddordain          #+#    #+#             */
-/*   Updated: 2022/06/13 17:49:12 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/06/14 11:12:59 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,14 @@ void	Dog::makeSound() const {
 
 std::string	Dog::getType() const {
 	return (this->type_);
+}
+
+std::string	Dog::getIdeas(const int index) const {
+	return (this->brain_->getIdeas(index));
+}
+
+void	Dog::setIdeas(int index, const std::string& idea) {
+	this->brain_->setIdeas(index, idea);
 }
 
 /* ************************************************************************** */

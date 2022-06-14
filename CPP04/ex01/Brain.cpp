@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 20:47:52 by ddordain          #+#    #+#             */
-/*   Updated: 2022/06/13 20:57:05 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/06/14 11:15:02 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,13 +50,24 @@ Brain&	Brain::operator =(const Brain& brain) {
 ** --------------------------------- METHODS ----------------------------------
 */
 
-
-
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
 
+std::string	Brain::getIdeas(const int index) const {
+	if (index <= 0 || index > 100) {
+		return ("error : min = 0, max = 100");
+	} else {
+		return (this->ideas_[index - 1]);
+	}
+}
 
-
+void	Brain::setIdeas(int index, const std::string& idea) {
+	if (index <= 0 || index > 100) {
+		return ;
+	} else {
+		this->ideas_[index - 1] = idea;
+	}
+}
 
 /* ************************************************************************** */

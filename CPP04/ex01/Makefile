@@ -6,7 +6,7 @@
 #    By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/25 15:36:31 by ddordain          #+#    #+#              #
-#    Updated: 2022/06/13 18:26:14 by ddordain         ###   ########.fr        #
+#    Updated: 2022/06/14 11:13:31 by ddordain         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ SRCS	=	main.cpp \
 			Dog.cpp \
 			WrongAnimal.cpp \
 			WrongCat.cpp \
+			Brain.cpp \
 
 OBJS	= $(SRCS:%.cpp=$(OBJ)/%.o)
 

@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 17:23:57 by ddordain          #+#    #+#             */
-/*   Updated: 2022/06/13 17:42:41 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/06/14 11:06:01 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define DOG_HPP
 
 #include "Animal.hpp"
-
+#include "Brain.hpp"
 #include <string>
 #include <iostream>
 #include <cstdlib>
@@ -32,8 +32,11 @@ class Dog : public Animal {
 		std::string	getType() const;
 
 		void	makeSound() const;
+		std::string	getIdeas(const int) const;
+		void		setIdeas(int, const std::string&);
 	private:
 		std::string	type_;
+		Brain*		brain_;
 };
 
 #endif

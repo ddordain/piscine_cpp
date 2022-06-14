@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 20:37:57 by ddordain          #+#    #+#             */
-/*   Updated: 2022/06/13 20:47:37 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/06/14 11:00:28 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ class Brain {
 
 		Brain&	operator =(const Brain&);
 
-		std::string	getIdeas() const;
+		std::string	getIdeas(const int) const;
+		void		setIdeas(int, const std::string&);
 	private:
 		std::string	ideas_[100];
 };

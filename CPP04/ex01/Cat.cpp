@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 17:25:13 by ddordain          #+#    #+#             */
-/*   Updated: 2022/06/13 17:48:51 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/06/14 11:13:43 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,14 @@ void	Cat::makeSound() const {
 
 std::string	Cat::getType() const {
 	return (this->type_);
+}
+
+std::string	Cat::getIdeas(const int index) const {
+	return (this->brain_->getIdeas(index));
+}
+
+void	Cat::setIdeas(int index, const std::string& idea) {
+	this->brain_->setIdeas(index, idea);
 }
 
 /* ************************************************************************** */
