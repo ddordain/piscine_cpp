@@ -1,43 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/13 16:43:49 by ddordain          #+#    #+#             */
-/*   Updated: 2022/06/14 18:27:45 by ddordain         ###   ########.fr       */
+/*   Created: 2022/06/13 18:17:33 by ddordain          #+#    #+#             */
+/*   Updated: 2022/06/13 18:31:24 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#ifndef WRONG_ANIMAL_HPP
+#define WRONG_ANIMAL_HPP
 
 #include <string>
 #include <iostream>
 #include <cstdlib>
-#include "Brain.hpp"
 
 #define PRINT(X) std::cout << X << std::endl;
 
-class Brain;
-
-class Animal {
+class WrongAnimal {
 	public:
-		Animal();
-		Animal(const std::string&);
-		Animal(const Animal&);
-		virtual ~Animal(); //undefined behavior if no virtual destructor for polymorphic class
+		WrongAnimal();
+		WrongAnimal(const std::string&);
+		WrongAnimal(const WrongAnimal&);
+		virtual ~WrongAnimal();
 
-		Animal& operator =(const Animal&);
+		WrongAnimal& operator =(const WrongAnimal&);
 
 		std::string	getType() const;
 
-		virtual void	makeSound() const;
-		virtual Brain*	getBrain() const;
+		void	makeSound() const;
 	protected:
 		std::string	type_;
 };
 
 #endif
-

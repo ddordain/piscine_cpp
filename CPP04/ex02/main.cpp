@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 17:11:27 by ddordain          #+#    #+#             */
-/*   Updated: 2022/06/14 18:33:14 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/06/14 18:32:35 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ delete i;
 		delete animalTable[i];
 	}
 
-	const Animal* k = new Animal();
-	delete k;
+	// const Animal* k = new Animal(); => does not work.
+
 return 0;
 }

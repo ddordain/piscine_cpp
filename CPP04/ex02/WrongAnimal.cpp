@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/13 16:51:16 by ddordain          #+#    #+#             */
-/*   Updated: 2022/06/14 18:30:33 by ddordain         ###   ########.fr       */
+/*   Created: 2022/06/13 18:19:01 by ddordain          #+#    #+#             */
+/*   Updated: 2022/06/13 18:19:48 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Animal::Animal() : type_("N/A") {
-	PRINT("+++ call of default Animal Constructor +++");
+WrongAnimal::WrongAnimal() : type_("N/A") {
+	PRINT("+++ call of default WrongAnimal Constructor +++");
 }
 
-Animal::Animal(const std::string& name) : type_(name) {
-	PRINT("+++ call of default Animal Constructor +++");
+WrongAnimal::WrongAnimal(const std::string& name) : type_(name) {
+	PRINT("+++ call of default WrongAnimal Constructor +++");
 }
 
-Animal::Animal(const Animal& animal) {
-	PRINT("+++ call of copy Animal Constructor +++");
-	if (this == &animal) {return ;}
-	*this = animal; 
+WrongAnimal::WrongAnimal(const WrongAnimal& WrongAnimal) {
+	PRINT("+++ call of copy WrongAnimal Constructor +++");
+	if (this == &WrongAnimal) {return ;}
+	*this = WrongAnimal; 
 }
 
 
@@ -36,16 +36,16 @@ Animal::Animal(const Animal& animal) {
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Animal::~Animal() {
-	PRINT("--- call of Animal destructor ---");
+WrongAnimal::~WrongAnimal() {
+	PRINT("--- call of WrongAnimal destructor ---");
 }
 
 /*
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Animal&	Animal::operator =(const Animal& animal) {
-	this->type_ = animal.type_;
+WrongAnimal&	WrongAnimal::operator =(const WrongAnimal& WrongAnimal) {
+	this->type_ = WrongAnimal.type_;
 	return (*this);
 }
 
@@ -53,7 +53,7 @@ Animal&	Animal::operator =(const Animal& animal) {
 ** --------------------------------- METHODS ----------------------------------
 */
 
-void	Animal::makeSound() const {
+void	WrongAnimal::makeSound() const {
 	PRINT("Hello Darkness my old friend...");
 }
 
@@ -61,12 +61,8 @@ void	Animal::makeSound() const {
 ** --------------------------------- ACCESSOR ---------------------------------
 */
 
-std::string	Animal::getType() const {
+std::string	WrongAnimal::getType() const {
 	return (this->type_);
-}
-
-Brain*	Animal::getBrain() const {
-	return (NULL);
 }
 
 /* ************************************************************************** */

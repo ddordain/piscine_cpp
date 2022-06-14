@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 16:51:16 by ddordain          #+#    #+#             */
-/*   Updated: 2022/06/14 18:30:33 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/06/14 16:18:37 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,6 @@ void	Animal::makeSound() const {
 
 std::string	Animal::getType() const {
 	return (this->type_);
-}
-
-Brain*	Animal::getBrain() const {
-	return (NULL);
 }
 
 /* ************************************************************************** */

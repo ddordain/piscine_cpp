@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 16:43:49 by ddordain          #+#    #+#             */
-/*   Updated: 2022/06/14 18:27:45 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/06/14 16:52:20 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ class Animal {
 		std::string	getType() const;
 
 		virtual void	makeSound() const;
-		virtual Brain*	getBrain() const;
+		virtual Brain*	getBrain() const = 0;
 	protected:
 		std::string	type_;
 };

@@ -1,51 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/13 16:51:16 by ddordain          #+#    #+#             */
-/*   Updated: 2022/06/14 18:30:33 by ddordain         ###   ########.fr       */
+/*   Created: 2022/06/13 20:47:52 by ddordain          #+#    #+#             */
+/*   Updated: 2022/06/14 17:07:36 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "Brain.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Animal::Animal() : type_("N/A") {
-	PRINT("+++ call of default Animal Constructor +++");
+Brain::Brain() {
+	PRINT("+++ call of Brain default constructior +++");
 }
 
-Animal::Animal(const std::string& name) : type_(name) {
-	PRINT("+++ call of default Animal Constructor +++");
+Brain::Brain(const Brain& brain) {
+	if (this == &brain) {return ;}
+	PRINT("+++ call of Brain copy constructor +++");
+	*this = brain;
 }
-
-Animal::Animal(const Animal& animal) {
-	PRINT("+++ call of copy Animal Constructor +++");
-	if (this == &animal) {return ;}
-	*this = animal; 
-}
-
-
 
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Animal::~Animal() {
-	PRINT("--- call of Animal destructor ---");
+Brain::~Brain() {
+	PRINT("--- call of Brain destructor ---");
 }
 
 /*
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Animal&	Animal::operator =(const Animal& animal) {
-	this->type_ = animal.type_;
+Brain&	Brain::operator =(const Brain& brain) {
+	if (this == &brain) {return (*this);}
+	for (int i = 0; i < 100; i++) {
+		this->ideas_[i] = brain.ideas_[i];
+	}
 	return (*this);
 }
 
@@ -53,20 +50,24 @@ Animal&	Animal::operator =(const Animal& animal) {
 ** --------------------------------- METHODS ----------------------------------
 */
 
-void	Animal::makeSound() const {
-	PRINT("Hello Darkness my old friend...");
-}
-
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
 
-std::string	Animal::getType() const {
-	return (this->type_);
+std::string	Brain::getIdeas(const int index) const {
+	if (index <= 0 || index > 100) {
+		return ("error : min = 0, max = 100");
+	} else {
+		return (this->ideas_[index - 1]);
+	}
 }
 
-Brain*	Animal::getBrain() const {
-	return (NULL);
+void	Brain::setIdeas(int index, const std::string& idea) {
+	if (index <= 0 || index > 100) {
+		return ;
+	} else {
+		this->ideas_[index - 1] = idea;
+	}
 }
 
 /* ************************************************************************** */

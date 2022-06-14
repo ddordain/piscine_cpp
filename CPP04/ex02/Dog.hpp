@@ -1,43 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/13 16:43:49 by ddordain          #+#    #+#             */
-/*   Updated: 2022/06/14 18:27:45 by ddordain         ###   ########.fr       */
+/*   Created: 2022/06/13 17:23:57 by ddordain          #+#    #+#             */
+/*   Updated: 2022/06/14 16:21:58 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#ifndef DOG_HPP
+#define DOG_HPP
 
+#include "Animal.hpp"
+#include "Brain.hpp"
 #include <string>
 #include <iostream>
 #include <cstdlib>
-#include "Brain.hpp"
 
 #define PRINT(X) std::cout << X << std::endl;
 
-class Brain;
-
-class Animal {
+class Dog : public Animal {
 	public:
-		Animal();
-		Animal(const std::string&);
-		Animal(const Animal&);
-		virtual ~Animal(); //undefined behavior if no virtual destructor for polymorphic class
+		Dog();
+		Dog(const Dog&);
+		~Dog();
 
-		Animal& operator =(const Animal&);
+		Dog& operator =(const Dog&);
 
 		std::string	getType() const;
 
-		virtual void	makeSound() const;
-		virtual Brain*	getBrain() const;
-	protected:
+		void	makeSound() const;
+		Brain*		getBrain() const;
+		std::string	getIdeas(const int) const;
+		void		setIdeas(int, const std::string&);
+	private:
 		std::string	type_;
+		Brain*		brain_;
 };
 
 #endif
-
