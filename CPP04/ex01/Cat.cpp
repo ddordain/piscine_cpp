@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 17:25:13 by ddordain          #+#    #+#             */
-/*   Updated: 2022/06/14 11:13:43 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/06/14 17:23:21 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,14 @@
 
 Cat::Cat() : Animal("cat") {
 	PRINT("+++ call of default Cat Constructor +++");
+	this->brain_ = new Brain;
 }
 
 Cat::Cat(const Cat& cat) : Animal() {
 	PRINT("+++ call of copy Cat Constructor +++");
 	if (this == &cat) {return ;}
-	*this = cat; 
+	this->brain_ = new Brain;
+	*this = cat;
 }
 
 
@@ -34,6 +36,7 @@ Cat::Cat(const Cat& cat) : Animal() {
 
 Cat::~Cat() {
 	PRINT("--- call of Cat destructor ---");
+	delete this->brain_;
 }
 
 /*
@@ -59,6 +62,10 @@ void	Cat::makeSound() const {
 
 std::string	Cat::getType() const {
 	return (this->type_);
+}
+
+Brain*	Cat::getBrain() const {
+	return (this->brain_);
 }
 
 std::string	Cat::getIdeas(const int index) const {

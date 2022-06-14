@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 17:23:57 by ddordain          #+#    #+#             */
-/*   Updated: 2022/06/14 11:06:01 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/06/14 16:21:58 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ class Dog : public Animal {
 		std::string	getType() const;
 
 		void	makeSound() const;
+		Brain*		getBrain() const;
 		std::string	getIdeas(const int) const;
 		void		setIdeas(int, const std::string&);
 	private:

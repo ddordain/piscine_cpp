@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 17:11:27 by ddordain          #+#    #+#             */
-/*   Updated: 2022/06/14 11:27:03 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/06/14 17:28:19 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "Dog.hpp"
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
-
+#include "Brain.hpp"
 #define TAB_SIZE 4
 
 int main()
@@ -40,5 +40,12 @@ delete i;
 		PRINT("animal " << i + 1 << " : " << animalTable[i]->getType());
 	}
 
+	PRINT(animalTable[0]->getBrain()->getIdeas(1)); // chien 1, idee 1, rien ne se passe car pas d'idee
+	animalTable[1]->getBrain()->setIdeas(20, "fish");
+	PRINT(animalTable[1]->getBrain()->getIdeas(20));
+
+	for (int i = 0; i < TAB_SIZE; i++) {
+		delete animalTable[i];
+	}
 return 0;
 }
