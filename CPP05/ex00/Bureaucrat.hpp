@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 19:01:30 by ddordain          #+#    #+#             */
-/*   Updated: 2022/06/14 19:59:37 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/06/15 16:23:24 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,9 @@ class Bureaucrat {
 		void		setName(const std::string&);
 		void		setGrade(int);
 
+		void		higherGrade();
+		void		lowerGrade();
+
 		class GradeTooHighException : public std::exception {
 			public:
 				const char* what() const throw();
@@ -47,5 +50,7 @@ class Bureaucrat {
 		const std::string	name_;
 		int					grade_;
 };
+
+std::iostream&	operator <<(std::iostream &o, const Bureaucrat& bureaucrat);
 
 #endif

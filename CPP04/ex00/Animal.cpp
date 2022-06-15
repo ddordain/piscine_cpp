@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 16:51:16 by ddordain          #+#    #+#             */
-/*   Updated: 2022/06/13 17:47:44 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/06/15 07:03:58 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ Animal::~Animal() {
 */
 
 Animal&	Animal::operator =(const Animal& animal) {
+	if (this == &animal) {return *this;}
 	this->type_ = animal.type_;
 	return (*this);
 }
