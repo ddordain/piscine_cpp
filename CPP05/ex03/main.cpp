@@ -6,12 +6,15 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 15:56:54 by ddordain          #+#    #+#             */
-/*   Updated: 2022/06/16 18:53:26 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/06/16 18:39:51 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 #define PRINT(X) std::cout << X << std::endl;
 
@@ -23,18 +26,48 @@ int main() {
 	Bureaucrat bossMathias = Bureaucrat("Mathias", 1);
 
 	// piscineuxLaurent.lowerGrade();
-	PRINT(piscineuxLaurent.getGrade());
+	// PRINT(piscineuxLaurent.getGrade());
 	// PRINT(tuteurElijah.getName());
 	// bossMathias.higherGrade();
+	PresidentialPardonForm macronForm;
+	RobotomyRequestForm	robotForm;
+	ShrubberyCreationForm treeForm;
 
-	Form	superForm = Form("form 42", false, 10, 10);
-	piscineuxLaurent.signForm(superForm);
-	try {	
-		superForm.beSigned(piscineuxLaurent);
+	try {
+		macronForm.execute(bossMathias);
 	}
 	catch (Form::GradeTooLowException &exception) {
 		std::cerr << exception.what() << std::endl;
 	}
-	bossMathias.signForm(superForm);
+	try {
+		macronForm.execute(piscineuxLaurent);
+	}
+	catch (Form::GradeTooLowException &exception) {
+		std::cerr << exception.what() << std::endl;
+	}
+	try {
+		robotForm.execute(piscineuxLaurent);
+	}
+	catch (Form::GradeTooLowException &exception) {
+		std::cerr << exception.what() << std::endl;
+	}
+	try {
+		robotForm.execute(bossMathias);
+	}
+	catch (Form::GradeTooLowException &exception) {
+		std::cerr << exception.what() << std::endl;
+	}
+	try {
+		robotForm.execute(bossMathias);
+	}
+	catch (Form::GradeTooLowException &exception) {
+		std::cerr << exception.what() << std::endl;
+	}
+	try {
+		treeForm.execute(bossMathias);
+	}
+	catch (Form::GradeTooLowException &exception) {
+		std::cerr << exception.what() << std::endl;
+	}
 	return 0;
 }

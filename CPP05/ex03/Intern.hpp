@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
+/*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/16 17:34:55 by ddordain          #+#    #+#             */
-/*   Updated: 2022/06/16 18:53:32 by ddordain         ###   ########.fr       */
+/*   Created: 2022/06/16 18:53:59 by ddordain          #+#    #+#             */
+/*   Updated: 2022/06/16 18:55:27 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRESIDENTIALPARDONFORM_HPP
-# define PRESIDENTIALPARDONFORM_HPP
+#ifndef INTERN_HPP
+# define INTERN_HPP
 
 #include <iostream>
 #include "Form.hpp"
 
-class PresidentialPardonForm : public Form
+class Intern
 {
 	public:
-		PresidentialPardonForm();
-		PresidentialPardonForm(const std::string);
-		PresidentialPardonForm(const PresidentialPardonForm&);
-		~PresidentialPardonForm();
+		Intern();
+		Intern(const Intern&);
+		virtual ~Intern();
 
-		PresidentialPardonForm&	operator =(const PresidentialPardonForm&);
+		Intern& operator =(const Intern&);
 
-		void	execute(const Bureaucrat& executor) const;
+		Form*	makeForm(std::string, std::string);
 };
 
 #endif

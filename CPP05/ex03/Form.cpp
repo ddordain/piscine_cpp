@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 17:25:03 by ddordain          #+#    #+#             */
-/*   Updated: 2022/06/16 18:53:23 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/06/16 17:44:04 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,40 @@
 */
 
 Form::Form() {}
+
+Form::Form(std::string name, int gradeToSign, int gradeToExecute) : name_(name) {
+	try {
+		if (gradeToSign < 1) {
+			throw Form::GradeTooHighException();
+		} else if (gradeToSign > 150) {
+			throw Form::GradeTooLowException();
+		} else {
+			this->gradeToSign_ = gradeToSign;
+		}
+	}
+	catch (GradeTooHighException &exception) {
+		std::cerr << exception.what() << std::endl;
+	}
+	catch (GradeTooLowException &exception) {
+		std::cerr << exception.what() << std::endl;
+	}
+	try {
+		if (gradeToExecute < 1) {
+			throw Form::GradeTooHighException();
+		} else if (gradeToExecute > 150) {
+			throw Form::GradeTooLowException();
+		} else {
+			this->gradeToExecute_ = gradeToExecute;
+		}
+	}
+	catch (GradeTooHighException &exception) {
+		std::cerr << exception.what() << std::endl;
+	}
+	catch (GradeTooLowException &exception) {
+		std::cerr << exception.what() << std::endl;
+	}
+}
+
 Form::Form(std::string name, bool is_signed, int gradeToSign, int gradeToExecute) : name_(name), isSigned_(is_signed) {
 	try {
 		if (gradeToSign < 1) {
@@ -49,6 +83,7 @@ Form::Form(std::string name, bool is_signed, int gradeToSign, int gradeToExecute
 		std::cerr << exception.what() << std::endl;
 	}
 }
+
 Form::Form(const Form& copy) {
 	*this = copy;
 }
