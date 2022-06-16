@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 19:07:37 by ddordain          #+#    #+#             */
-/*   Updated: 2022/06/15 16:24:23 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/06/16 16:25:23 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,25 @@ void	Bureaucrat::lowerGrade() {
 	}
 	catch (GradeTooLowException& exception) {
 		std::cerr << exception.what() << std::endl;
+	}
+}
+
+
+void	Bureaucrat::signForm(Form& form) {
+	try {
+		form.beSigned(*this);
+		std::cout 	<< this->name_
+					<< " signed "
+					<< form.getName()
+					<< std::endl;
+	}
+	catch (std::exception &exception) {
+		std::cerr 	<< this->name_
+					<< " could not sign "
+					<< form.getName()
+					<< " because "
+					<< exception.what()
+					<< std::endl; 
 	}
 }
 
