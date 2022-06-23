@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 13:57:44 by ddordain          #+#    #+#             */
-/*   Updated: 2022/06/23 18:52:34 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/06/24 00:33:32 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,22 @@ class Convert {
 		Convert&	operator =(const Convert&);
 
 		
-		char	convertChar(std::string& str);
-		int		convertInt(std::string& str);
-		float	convertFloat(std::string& str);
-		double	convertDouble(std::string& str);
+		void	convertChar(const std::string& str);
+		void	convertInt(const std::string& str);
+		void	convertFloat(const std::string& str);
+		void	convertDouble(const std::string& str);
 
 		bool	isChar(const std::string&);
 		bool	isInt(const std::string&);
 		bool	isFloat(const std::string&);
 		bool	isDouble(const std::string&);
 
+		void	print();
+
+		bool	overflowChar_;
+		bool	overflowInt_;
+		bool	overflowFloat_;
+		bool	overflowDouble_;
 	private:
 		// four types
 		char	char_;
@@ -54,10 +60,9 @@ class Convert {
 		bool	nan_;
 		
 		// overflow to check
-		bool	overflowChar_;
-		bool	overflowInt_;
-		bool	overflowFloat_;
-		bool	overflowDouble_;
+
+
+		bool	noType_;
 
 		void	plusInfIsTrue();
 		void	minusInfIsTrue();
