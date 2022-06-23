@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 13:57:44 by ddordain          #+#    #+#             */
-/*   Updated: 2022/06/23 18:14:05 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/06/23 18:52:34 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@
 #include <cstdlib>
 #include <string>
 #include <cctype>
-
+#include <cerrno>
+#include <climits>
+#include <limits>
 
 class Convert {
 	public:
@@ -52,6 +54,7 @@ class Convert {
 		bool	nan_;
 		
 		// overflow to check
+		bool	overflowChar_;
 		bool	overflowInt_;
 		bool	overflowFloat_;
 		bool	overflowDouble_;
@@ -59,6 +62,7 @@ class Convert {
 		void	plusInfIsTrue();
 		void	minusInfIsTrue();
 		void	nanIsTrue();
+		void	isOverflow(const std::string&);
 };
 
 #endif

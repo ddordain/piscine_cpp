@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 14:22:58 by ddordain          #+#    #+#             */
-/*   Updated: 2022/06/23 18:16:11 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/06/23 19:04:48 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ Convert::Convert(const std::string& str) :	char_('0'),
 			(this->*f[i])();
 		}
 	}
+	if (isInt(str)) {}
 }
 
 Convert::Convert(const Convert& copy) {
@@ -67,7 +68,7 @@ bool	Convert::isChar(const std::string& str) {
 }
 
 bool	Convert::isInt(const std::string& str) {
-	for (int i = 0; i < str.length(); i++) {
+	for (size_t i = 0; i < str.length(); i++) {
 		if (i == 0 && std::isdigit(str[i]) != 1 && str[i] != '-') {return (false);}
 		if (i != 0 && std::isdigit(str[i]) != 1) {return (false);}
 	}
@@ -82,7 +83,7 @@ bool	Convert::isInt(const std::string& str) {
 bool	Convert::isFloat(const std::string& str) {
 	std::string::const_iterator	i = str.begin();
 	bool						decimalPoint = false;
-	int							minSize = 0;
+	size_t							minSize = 0;
     if(str.size() > 0 && (str[0] == '-' || str[0] == '+')) {
     	i++;
     	minSize++;
@@ -99,7 +100,7 @@ bool	Convert::isFloat(const std::string& str) {
 bool	Convert::isDouble(const std::string& str) {
 	std::string::const_iterator	i = str.begin();
 	bool						decimalPoint = false;
-	int							minSize = 0;
+	size_t							minSize = 0;
     if(str.size() > 0 && (str[0] == '-' || str[0] == '+')) {
     	i++;
     	minSize++;
@@ -116,3 +117,14 @@ bool	Convert::isDouble(const std::string& str) {
 void	Convert::plusInfIsTrue() {this->plusInf_ = true;}
 void	Convert::minusInfIsTrue() {this->minusInf_ = true;}
 void	Convert::nanIsTrue() {this->nan_ = true;}
+
+void	Convert::isOverflow(const std::string& str) {
+	double	bufferDouble = std::strtod(str.c_str(), NULL);
+	if (errno == 0) {
+		if (bufferDouble < CHAR_MIN || bufferDouble > CHAR_MIN) {this->overflowChar_ = true;}
+		if (bufferDouble < INT_MIN || bufferDouble > INT_MAX) {this->overflowChar_ = true;}
+		if (bufferDouble < -(__FLT_MAX__) || bufferDouble > __FLT_MAX__) {this->overflowFloat_ = true;}
+	} else {
+		this->overflowDouble_ = true;
+	}
+}
