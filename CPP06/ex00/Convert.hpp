@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 13:57:44 by ddordain          #+#    #+#             */
-/*   Updated: 2022/06/21 18:37:54 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/06/23 18:14:05 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 class Convert {
 	public:
 		Convert();
+		Convert(const std::string&);
 		Convert(const Convert&);
 		virtual	~Convert();
 
@@ -37,6 +38,7 @@ class Convert {
 		bool	isInt(const std::string&);
 		bool	isFloat(const std::string&);
 		bool	isDouble(const std::string&);
+
 	private:
 		// four types
 		char	char_;
@@ -53,6 +55,10 @@ class Convert {
 		bool	overflowInt_;
 		bool	overflowFloat_;
 		bool	overflowDouble_;
+
+		void	plusInfIsTrue();
+		void	minusInfIsTrue();
+		void	nanIsTrue();
 };
 
 #endif

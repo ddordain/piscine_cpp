@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 14:22:58 by ddordain          #+#    #+#             */
-/*   Updated: 2022/06/21 18:35:56 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/06/23 18:16:11 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,26 @@ Convert::Convert() :	char_('0'),
 						plusInf_(false),
 						minusInf_(false),
 						nan_(false)
-						{}
+						{
+}
+
+Convert::Convert(const std::string& str) :	char_('0'),
+					 	int_(0),
+						float_(0),
+						double_(0),
+						plusInf_(false),
+						minusInf_(false),
+						nan_(false)
+						{
+	std::string	strTable[6] = {"-inff", "-inf", "+inf", "+inff", "nan", "nanf"};
+	void	(Convert::*f[6]) (void) = {&Convert::minusInfIsTrue, &Convert::minusInfIsTrue, &Convert::plusInfIsTrue, &Convert::plusInfIsTrue, &Convert::nanIsTrue, &Convert::nanIsTrue};
+
+	for (int i = 0; i < 6; i++) {
+		if (str == strTable[i]) {
+			(this->*f[i])();
+		}
+	}
+}
 
 Convert::Convert(const Convert& copy) {
 	*this = copy;
@@ -93,3 +112,7 @@ bool	Convert::isDouble(const std::string& str) {
 	}
 	return (str.size() > minSize && i == str.end());
 }
+
+void	Convert::plusInfIsTrue() {this->plusInf_ = true;}
+void	Convert::minusInfIsTrue() {this->minusInf_ = true;}
+void	Convert::nanIsTrue() {this->nan_ = true;}
