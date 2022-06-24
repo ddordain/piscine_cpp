@@ -6,12 +6,12 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 15:18:47 by ddordain          #+#    #+#             */
-/*   Updated: 2022/06/24 15:37:51 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/06/24 17:22:39 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DATA_HPP
-# define DATA_HPP
+#define DATA_HPP
 
 #include <iostream>
 #include <string>

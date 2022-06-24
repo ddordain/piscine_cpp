@@ -1,23 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Base.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/24 15:12:48 by ddordain          #+#    #+#             */
-/*   Updated: 2022/06/24 17:22:40 by ddordain         ###   ########.fr       */
+/*   Created: 2022/06/24 16:49:37 by ddordain          #+#    #+#             */
+/*   Updated: 2022/06/24 16:50:03 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Data.hpp"
+#include "Base.hpp"
 
-#define PRINT(X) std::cout << X << std::endl;
-
-int main() {
-	Data data("QWERTYUIOP_1234567890");
-	PRINT("data address : " << &data << " value : " << data.getData());
-	uintptr_t ptr = serialize((Data*)&data);
-	PRINT("ptr address serialized : " << ptr);
-	PRINT("Data address deserialized : " << deserialize(ptr)  << ", value : " << deserialize(ptr)->getData());
-}
+Base::~Base() {}
