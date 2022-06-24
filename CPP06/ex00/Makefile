@@ -6,14 +6,13 @@
 #    By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/25 15:36:31 by ddordain          #+#    #+#              #
-#    Updated: 2022/06/21 17:24:22 by ddordain         ###   ########.fr        #
+#    Updated: 2022/06/24 14:39:21 by ddordain         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	a.out
+NAME	=	convert
 
 SRCS	=	main.cpp \
-			Convert.cpp \
 
 OBJS	= $(SRCS:%.cpp=$(OBJ)/%.o)
 
