@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 11:53:27 by ddordain          #+#    #+#             */
-/*   Updated: 2022/06/25 15:48:41 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/06/25 15:56:52 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ template <typename T> class Array {
 				else {return (this->array_[i]);}
 			}
 
-			unsigned int	getSize() const {return (this->n_);}
+			unsigned int	size() const {return (this->n_);}
 			void			setValue(unsigned int i, T v) {
 				if (i >= n_) {return;}
 				array_[i] = v;
