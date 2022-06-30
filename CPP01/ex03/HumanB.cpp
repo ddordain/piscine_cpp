@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 12:45:12 by ddordain          #+#    #+#             */
-/*   Updated: 2022/06/06 13:23:22 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/06/30 15:10:13 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,7 @@ void	HumanB::setWeapon(Weapon& weapon) {
 }
 
 void	HumanB::attack() {
+	if (this->weapon_ == NULL)
+		return ;
 	PRINT(this->name_ << " attacks with his " << this->weapon_->getType());
 }
