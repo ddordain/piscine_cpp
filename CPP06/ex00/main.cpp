@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 17:21:14 by ddordain          #+#    #+#             */
-/*   Updated: 2022/06/24 14:39:03 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/07/01 17:07:28 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,8 @@ int main(int ac, char **av) {
 	} else {
 		buffer = strtod(str.c_str(), NULL);
 	}
-	std::cout << "str  " << str << std::endl;
-	std::cout << "buffer  " << buffer << std::endl;
+	// std::cout << "str  " << str << std::endl;
+	// std::cout << "buffer  " << buffer << std::endl;
 
 //char print
 	std::cout << "char : ";
