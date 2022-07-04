@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 14:13:56 by ddordain          #+#    #+#             */
-/*   Updated: 2022/06/08 14:38:36 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/07/04 16:50:26 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name, 100, 100, 30) {
 }
 
 FragTrap::FragTrap(const FragTrap& copy) : ClapTrap() {
-	if (this == &copy) {return ;}
 	*this = copy;
 	PRINT("+++ CALL COPY CONSTRUCTOR FragTrap +++");
 }
@@ -44,6 +43,7 @@ FragTrap::~FragTrap() {
 */
 
 FragTrap&	FragTrap::operator =(const FragTrap& FragTrap) {
+	if (this == &FragTrap) {return (*this);}
 	this->name_ = FragTrap.name_;
 	this->hitPoints_ = FragTrap.hitPoints_;
 	this->energyPoints_ = FragTrap.energyPoints_;

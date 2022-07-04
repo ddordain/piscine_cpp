@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 19:02:20 by ddordain          #+#    #+#             */
-/*   Updated: 2022/06/08 15:15:46 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/07/04 16:50:11 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ ClapTrap::ClapTrap(std::string name, int hitPoint, int energyPoint, int attackDa
 
 //copy constructor
 ClapTrap::ClapTrap(const ClapTrap& copy) {
-	if (this == &copy) {return ;}
 	*this = copy;
 	PRINT("+++ call copy constructor +++");
 }
@@ -56,6 +55,7 @@ ClapTrap::~ClapTrap() {
 */
 
 ClapTrap&	ClapTrap::operator =(const ClapTrap& claptrap) {
+	if (this == &claptrap) {return (*this);}
 	this->name_ = claptrap.name_;
 	this->hitPoints_ = claptrap.hitPoints_;
 	this->energyPoints_ = claptrap.energyPoints_;

@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 00:31:16 by ddordain          #+#    #+#             */
-/*   Updated: 2022/06/08 14:38:11 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/07/04 16:46:30 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name, 100, 50, 20) {
 }
 
 ScavTrap::ScavTrap(const ScavTrap& copy) : ClapTrap() {
-	if (this == &copy) {return ;}
 	*this = copy;
 	PRINT("+++ CALL COPY CONSTRUCTOR SCAVTRAP +++");
 }
@@ -44,6 +43,7 @@ ScavTrap::~ScavTrap() {
 */
 
 ScavTrap&	ScavTrap::operator =(const ScavTrap& scavtrap) {
+	if (this == &scavtrap) {return (*this);}
 	this->name_ = scavtrap.name_;
 	this->hitPoints_ = scavtrap.hitPoints_;
 	this->energyPoints_ = scavtrap.energyPoints_;

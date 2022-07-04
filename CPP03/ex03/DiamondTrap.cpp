@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 14:48:20 by ddordain          #+#    #+#             */
-/*   Updated: 2022/06/08 18:33:26 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/07/04 16:50:17 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ DiamondTrap::DiamondTrap (const std::string name) : ClapTrap(name + "_clap_name"
 }
 
 DiamondTrap::DiamondTrap (const DiamondTrap& copy) : ClapTrap(), ScavTrap(), FragTrap() {
-	if (this == &copy) {return ;}
 	*this = copy;
 }
 
@@ -42,6 +41,7 @@ DiamondTrap::~DiamondTrap() {
 */
 
 DiamondTrap&	DiamondTrap::operator =(const DiamondTrap& diamond) {
+	if (this == &diamond) {return (*this);}
 	this->name_ = diamond.getName();
 	this->ClapTrap::name_ = diamond.ClapTrap::name_;
 	this->hitPoints_ = diamond.getHitPoints();

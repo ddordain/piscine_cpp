@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 19:02:20 by ddordain          #+#    #+#             */
-/*   Updated: 2022/06/08 14:38:29 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/07/04 16:43:40 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ ClapTrap::~ClapTrap() {
 */
 
 ClapTrap&	ClapTrap::operator =(const ClapTrap& claptrap) {
+	if (this == &claptrap) {return (*this);}
 	this->name_ = claptrap.name_;
 	this->hitPoints_ = claptrap.hitPoints_;
 	this->energyPoints_ = claptrap.energyPoints_;

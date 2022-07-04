@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 00:31:16 by ddordain          #+#    #+#             */
-/*   Updated: 2022/06/08 14:39:12 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/07/04 16:44:59 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ ScavTrap::~ScavTrap() {
 */
 
 ScavTrap&	ScavTrap::operator =(const ScavTrap& scavtrap) {
+	if (this == &scavtrap) {return (*this);}
 	this->name_ = scavtrap.name_;
 	this->hitPoints_ = scavtrap.hitPoints_;
 	this->energyPoints_ = scavtrap.energyPoints_;

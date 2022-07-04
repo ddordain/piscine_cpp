@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 14:13:56 by ddordain          #+#    #+#             */
-/*   Updated: 2022/06/08 14:38:36 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/07/04 16:44:21 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ FragTrap::~FragTrap() {
 */
 
 FragTrap&	FragTrap::operator =(const FragTrap& FragTrap) {
+	if (this == &FragTrap) {return (*this);}
 	this->name_ = FragTrap.name_;
 	this->hitPoints_ = FragTrap.hitPoints_;
 	this->energyPoints_ = FragTrap.energyPoints_;
