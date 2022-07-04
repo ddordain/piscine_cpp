@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 23:13:44 by ddordain          #+#    #+#             */
-/*   Updated: 2022/07/04 10:41:26 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/07/04 11:07:36 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,11 @@ Fixed&	Fixed::operator=(const Fixed& fixed) {
 int	Fixed::getRawBits() const {
 	PRINT("getRawBits member function called");
 	return (this->fixed_);
+}
+
+void	Fixed::setRawBits(const int fixed) {
+	PRINT("setRawBits member function called");
+	this->fixed_ = fixed;
 }
 
 int	Fixed::toInt() const {

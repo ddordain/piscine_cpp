@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 23:05:35 by ddordain          #+#    #+#             */
-/*   Updated: 2022/07/04 10:44:12 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/07/04 11:08:30 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ class Fixed {
 	Fixed	operator --(); // prefix
 
 	int		getRawBits() const;
+	void	setRawBits(const int);
 
 	float	toFloat() const;
 	int		toInt() const;
