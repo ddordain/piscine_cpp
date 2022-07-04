@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 23:13:44 by ddordain          #+#    #+#             */
-/*   Updated: 2022/06/07 17:04:12 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/07/04 10:51:01 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	Fixed::toInt() const {
 }
 
 float Fixed::toFloat() const {
-	return ((float)this->fixed_ / (1 << Fixed::bits_));
+	return (static_cast<float>(this->fixed_) / (1 << Fixed::bits_));
 }
 
 std::ostream&	operator <<(std::ostream& o, const Fixed& fixed) {
