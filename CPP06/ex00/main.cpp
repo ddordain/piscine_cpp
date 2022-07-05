@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 17:21:14 by ddordain          #+#    #+#             */
-/*   Updated: 2022/07/01 17:27:32 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/07/05 16:39:17 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,10 @@ int main(int ac, char **av) {
 
 	if (str.length() == 1 && std::isprint(str[0]) && !std::isdigit(str[0])) {
 		buffer = str[0];
-	} else if (str.length() > 1 && !std::isdigit(str[0])) {
+	} else if (str.compare("inf") == 0|| str.compare("+inff") == 0|| str.compare("-inff") == 0 || str.compare("+inf") == 0 || str.compare("-inf") == 0|| str.compare("inff") == 0) {
+		buffer = strtod(str.c_str(), NULL);
+	} else if ((str.length() > 1 && !std::isdigit(str[0]) && str[0] != '-' && str[0] != '+')
+				 || !std::isdigit(str[1])) {
 		buffer = strtod("NAN", NULL);
 	} else {
 		buffer = strtod(str.c_str(), NULL);
