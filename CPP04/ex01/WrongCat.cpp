@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 18:21:33 by ddordain          #+#    #+#             */
-/*   Updated: 2022/07/05 18:58:03 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/07/06 16:48:44 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ WrongCat::~WrongCat() {
 */
 
 WrongCat&	WrongCat::operator =(const WrongCat& WrongCat) {
+	if (this == &WrongCat) {return (*this);}
 	this->type_ = WrongCat.type_;
 	return (*this);
 }

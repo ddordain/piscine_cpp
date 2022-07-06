@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 17:11:27 by ddordain          #+#    #+#             */
-/*   Updated: 2022/07/05 18:53:14 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/07/06 18:02:46 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ PRINT("==========================================");
 
 const WrongAnimal* meta2 = new WrongAnimal();
 const WrongAnimal* k = new WrongCat();
-std::cout << i->getType() << " " << std::endl;
+std::cout << k->getType() << " " << std::endl;
 k->makeSound(); //will output the cat sound!
 meta2->makeSound();
 

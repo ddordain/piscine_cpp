@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 17:11:27 by ddordain          #+#    #+#             */
-/*   Updated: 2022/07/05 19:04:52 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/07/06 16:52:05 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,5 @@ delete i;
 	}
 
 	// const Animal* k = new Animal(); //=> does not work.
-
 return 0;
 }

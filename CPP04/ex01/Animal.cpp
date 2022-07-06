@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 16:51:16 by ddordain          #+#    #+#             */
-/*   Updated: 2022/07/05 18:54:14 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/07/06 16:46:42 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ Animal::Animal(const std::string& name) : type_(name) {
 
 Animal::Animal(const Animal& animal) {
 	PRINT("+++ call of copy Animal Constructor +++");
-	if (this == &animal) {return ;}
 	*this = animal; 
 }
 
@@ -45,6 +44,7 @@ Animal::~Animal() {
 */
 
 Animal&	Animal::operator =(const Animal& animal) {
+	if (this == &animal) {return (*this);}
 	this->type_ = animal.type_;
 	return (*this);
 }

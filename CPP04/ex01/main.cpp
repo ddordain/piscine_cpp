@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 17:11:27 by ddordain          #+#    #+#             */
-/*   Updated: 2022/07/05 18:57:23 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/07/06 18:49:01 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,20 @@ delete i;
 	for (int i = 0; i < TAB_SIZE; i++) {
 		delete animalTable[i];
 	}
+
+	// deep copy
+	Dog* snoopy = new Dog();
+	snoopy->getBrain()->setIdeas(5,"sleeping");
+	PRINT(snoopy->getBrain()->getIdeas(5));
+	Animal* snoopyCopy = new Dog(*snoopy);
+	PRINT(snoopyCopy->getBrain()->getIdeas(5));
+	Dog* snoopyEqual = new Dog();
+	*snoopyEqual = *snoopy;
+	PRINT(snoopyEqual->getBrain()->getIdeas(5));
+
+	delete snoopy;
+	delete snoopyCopy;
+	delete snoopyEqual;
 
 	const Animal* k = new Animal();
 	delete k;

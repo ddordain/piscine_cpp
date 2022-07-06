@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 18:19:01 by ddordain          #+#    #+#             */
-/*   Updated: 2022/07/05 18:53:19 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/07/06 16:45:36 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ WrongAnimal::WrongAnimal(const std::string& name) : type_(name) {
 
 WrongAnimal::WrongAnimal(const WrongAnimal& WrongAnimal) {
 	PRINT("+++ call of copy WrongAnimal Constructor +++");
-	if (this == &WrongAnimal) {return ;}
 	*this = WrongAnimal; 
 }
 
@@ -45,6 +44,7 @@ WrongAnimal::~WrongAnimal() {
 */
 
 WrongAnimal&	WrongAnimal::operator =(const WrongAnimal& WrongAnimal) {
+	if (this == &WrongAnimal) {return (*this);}
 	this->type_ = WrongAnimal.type_;
 	return (*this);
 }

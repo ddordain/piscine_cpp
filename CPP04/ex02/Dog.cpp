@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 17:25:01 by ddordain          #+#    #+#             */
-/*   Updated: 2022/07/05 19:01:25 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/07/06 18:36:08 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Dog::Dog() : Animal("dog") {
 Dog::Dog(const Dog& dog) : Animal() {
 	PRINT("+++ call of copy Dog Constructor +++");
 	if (this == &dog) {return ;}
-	this->brain_ = new Brain;
+	this->brain_ = new Brain(*(dog.brain_));
 	*this = dog; 
 }
 
@@ -42,7 +42,9 @@ Dog::~Dog() {
 */
 
 Dog&	Dog::operator =(const Dog& dog) {
+	if (this == &dog) {return (*this);}
 	this->type_ = dog.type_;
+	this->brain_ = dog.brain_;
 	return (*this);
 }
 

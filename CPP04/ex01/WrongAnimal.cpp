@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 18:19:01 by ddordain          #+#    #+#             */
-/*   Updated: 2022/07/05 18:57:26 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/07/06 16:48:20 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ WrongAnimal::~WrongAnimal() {
 */
 
 WrongAnimal&	WrongAnimal::operator =(const WrongAnimal& WrongAnimal) {
+	if (this == &WrongAnimal) {return (*this);}
 	this->type_ = WrongAnimal.type_;
 	return (*this);
 }

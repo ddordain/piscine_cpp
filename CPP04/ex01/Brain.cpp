@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 20:47:52 by ddordain          #+#    #+#             */
-/*   Updated: 2022/07/05 18:54:24 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/07/06 16:46:55 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ Brain::Brain() {
 }
 
 Brain::Brain(const Brain& brain) {
-	if (this == &brain) {return ;}
 	PRINT("+++ call of Brain copy constructor +++");
 	*this = brain;
 }
