@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 17:25:13 by ddordain          #+#    #+#             */
-/*   Updated: 2022/07/06 18:44:53 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/07/06 19:08:35 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ Cat::Cat(const Cat& cat) : Animal() {
 	PRINT("+++ call of copy Cat Constructor +++");
 	if (this == &cat) {return ;}
 	this->brain_ = new Brain(*(cat.brain_));
-	*this = cat;
 }
 
 
