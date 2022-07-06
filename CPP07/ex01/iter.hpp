@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 20:15:09 by ddordain          #+#    #+#             */
-/*   Updated: 2022/06/24 20:58:54 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/07/06 16:09:58 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 
 #include <iostream>
 #include <cstdlib>
+
+template <typename T> void iter(const T* array, size_t size, void (*f)(const T&)) {
+	for (size_t i = 0; i < size; i++) {
+		f(array[i]);
+	}
+}
 
 template <typename T> void	iter(T* array, size_t size, void (*f)(T&)) {
 	for (size_t i = 0; i < size; i++) {
