@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 16:45:09 by ddordain          #+#    #+#             */
-/*   Updated: 2022/07/12 15:11:07 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/07/12 19:47:23 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ class Bureaucrat;
 class Form {
 	public:
 		Form();
-		Form(std::string, int, int);
-		Form(std::string, bool, int, int);
+		Form(std::string, bool, int, int, std::string);
+		Form(std::string, int, int, std::string);
 		Form(const Form&);
-		~Form();
+		virtual ~Form();
 
 		Form& operator = (const Form&);
 
@@ -53,6 +53,8 @@ class Form {
 		bool				isSigned_;
 		int					gradeToSign_;
 		int					gradeToExecute_;
+	protected:
+		std::string			target_;
 };
 
 #endif

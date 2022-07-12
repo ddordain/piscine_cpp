@@ -6,7 +6,7 @@
 #    By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/25 15:36:31 by ddordain          #+#    #+#              #
-#    Updated: 2022/06/16 18:40:12 by ddordain         ###   ########.fr        #
+#    Updated: 2022/07/12 19:35:41 by ddordain         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ OBJ		= ./obj
 
 CXX	= c++
 
-CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -pedantic
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -pedantic -g
 
 RM = rm -f
 

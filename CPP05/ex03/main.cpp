@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 15:56:54 by ddordain          #+#    #+#             */
-/*   Updated: 2022/07/12 15:11:57 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/07/12 19:08:27 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "Intern.hpp"
+
 
 #define PRINT(X) std::cout << X << std::endl;
 
@@ -29,45 +31,65 @@ int main() {
 	// PRINT(piscineuxLaurent.getGrade());
 	// PRINT(tuteurElijah.getName());
 	// bossMathias.higherGrade();
-	PresidentialPardonForm macronForm;
-	RobotomyRequestForm	robotForm;
-	ShrubberyCreationForm treeForm;
+	// PresidentialPardonForm macronForm;
+	// RobotomyRequestForm	robotForm;
+	// ShrubberyCreationForm treeForm;
 
+	// try {
+	// 	macronForm.execute(bossMathias);
+	// }
+	// catch (Form::GradeTooLowException &exception) {
+	// 	std::cerr << exception.what() << std::endl;
+	// }
+	// try {
+	// 	macronForm.execute(piscineuxLaurent);
+	// }
+	// catch (Form::GradeTooLowException &exception) {
+	// 	std::cerr << exception.what() << std::endl;
+	// }
+	// try {
+	// 	robotForm.execute(piscineuxLaurent);
+	// }
+	// catch (Form::GradeTooLowException &exception) {
+	// 	std::cerr << exception.what() << std::endl;
+	// }
+	// try {
+	// 	robotForm.execute(bossMathias);
+	// }
+	// catch (Form::GradeTooLowException &exception) {
+	// 	std::cerr << exception.what() << std::endl;
+	// }
+	// try {
+	// 	robotForm.execute(bossMathias);
+	// }
+	// catch (Form::GradeTooLowException &exception) {
+	// 	std::cerr << exception.what() << std::endl;
+	// }
+	// try {
+	// 	treeForm.execute(bossMathias);
+	// }
+	// catch (Form::GradeTooLowException &exception) {
+	// 	std::cerr << exception.what() << std::endl;
+	// }
+
+	Intern randomIntern;
+	Form* rrf;
+	Form* rrf2;
+	rrf = randomIntern.makeForm("robotomy request", "Bender");
+	rrf2 = randomIntern.makeForm("shrubbery creation", "Lucas");
 	try {
-		macronForm.execute(bossMathias);
+		rrf->execute(piscineuxLaurent);
 	}
 	catch (Form::GradeTooLowException &exception) {
 		std::cerr << exception.what() << std::endl;
 	}
 	try {
-		macronForm.execute(piscineuxLaurent);
+		rrf2->execute(bossMathias);
 	}
 	catch (Form::GradeTooLowException &exception) {
 		std::cerr << exception.what() << std::endl;
 	}
-	try {
-		robotForm.execute(piscineuxLaurent);
-	}
-	catch (Form::GradeTooLowException &exception) {
-		std::cerr << exception.what() << std::endl;
-	}
-	try {
-		robotForm.execute(bossMathias);
-	}
-	catch (Form::GradeTooLowException &exception) {
-		std::cerr << exception.what() << std::endl;
-	}
-	try {
-		robotForm.execute(bossMathias);
-	}
-	catch (Form::GradeTooLowException &exception) {
-		std::cerr << exception.what() << std::endl;
-	}
-	try {
-		treeForm.execute(bossMathias);
-	}
-	catch (Form::GradeTooLowException &exception) {
-		std::cerr << exception.what() << std::endl;
-	}
+	delete rrf;
+	delete rrf2;
 	return 0;
 }

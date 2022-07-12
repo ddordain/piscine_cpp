@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 15:56:54 by ddordain          #+#    #+#             */
-/*   Updated: 2022/07/12 15:11:11 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/07/12 19:41:18 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int main() {
 	// PRINT(tuteurElijah.getName());
 	// bossMathias.higherGrade();
 	PresidentialPardonForm macronForm;
-	RobotomyRequestForm	robotForm;
+	RobotomyRequestForm	robotForm("bender");
 	ShrubberyCreationForm treeForm;
 
 	try {

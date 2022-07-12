@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 16:45:09 by ddordain          #+#    #+#             */
-/*   Updated: 2022/07/12 15:16:36 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/07/12 19:47:35 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ class Bureaucrat;
 class Form {
 	public:
 		Form();
-		Form(std::string, int, int);
-		Form(std::string, bool, int, int);
+		Form(std::string, bool, int, int, std::string);
+		Form(std::string, int, int, std::string);
 		Form(const Form&);
 		virtual ~Form();
 
@@ -41,7 +41,7 @@ class Form {
 
 		class GradeTooLowException : public std::exception {
 			public:
-				const char* what() const throw(); 
+				const char* what() const throw();
 		};
 
 		class GradeTooHighException : public std::exception {
@@ -53,6 +53,8 @@ class Form {
 		bool				isSigned_;
 		int					gradeToSign_;
 		int					gradeToExecute_;
+	protected:
+		std::string			target_;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 17:25:03 by ddordain          #+#    #+#             */
-/*   Updated: 2022/07/12 15:11:04 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/07/12 19:34:23 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 Form::Form() {}
 
-Form::Form(std::string name, int gradeToSign, int gradeToExecute) : name_(name) {
+Form::Form(std::string name, int gradeToSign, int gradeToExecute, std::string target) : name_(name), target_(target) {
 	try {
 		if (gradeToSign < 1) {
 			throw Form::GradeTooHighException();
@@ -51,7 +51,7 @@ Form::Form(std::string name, int gradeToSign, int gradeToExecute) : name_(name) 
 	}
 }
 
-Form::Form(std::string name, bool is_signed, int gradeToSign, int gradeToExecute) : name_(name), isSigned_(is_signed) {
+Form::Form(std::string name, bool is_signed, int gradeToSign, int gradeToExecute, std::string target) : name_(name), isSigned_(is_signed), target_(target) {
 	try {
 		if (gradeToSign < 1) {
 			throw Form::GradeTooHighException();

@@ -6,15 +6,15 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 18:29:46 by ddordain          #+#    #+#             */
-/*   Updated: 2022/07/12 15:11:24 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/07/12 19:44:24 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm() : Form("unamed", 145, 137) {}
+ShrubberyCreationForm::ShrubberyCreationForm() : Form("unamed", 145, 137, "notarget") {}
 
-ShrubberyCreationForm::ShrubberyCreationForm(const std::string name) : Form(name, 145, 137) {}
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : Form("Shruberry Creation", 145, 137, target) {}
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& copy) : Form() {
 	*this = copy;
@@ -35,9 +35,9 @@ void	ShrubberyCreationForm::execute (Bureaucrat const & executor) const {
 	} else {
 		std::ofstream ofs;
 
-		ofs.open(executor.getName().c_str());
+		ofs.open(target_.c_str());
 		if (ofs.fail()) {
-			std::cerr << "cannot create " << (executor.getName()) << " file" << std::endl;
+			std::cerr << "cannot create " << target_ << " file" << std::endl;
 			return;
 		} else {
 		ofs << "    ccee88oo"          << std::endl

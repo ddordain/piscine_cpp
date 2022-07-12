@@ -6,15 +6,15 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 18:16:34 by ddordain          #+#    #+#             */
-/*   Updated: 2022/06/16 18:28:46 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/07/12 19:39:24 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm() : Form("unamed", 72, 45) {}
+RobotomyRequestForm::RobotomyRequestForm() : Form("unamed", 72, 45, "notarget") {}
 
-RobotomyRequestForm::RobotomyRequestForm(const std::string name) :	Form(name, 72, 45) {}
+RobotomyRequestForm::RobotomyRequestForm(std::string target) :	Form("RobotomyRequestForm", 72, 45, target) {}
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& copy) : Form() {
 	*this = copy;
@@ -37,9 +37,9 @@ void	RobotomyRequestForm::execute (Bureaucrat const & executor) const
 	} else {
 		std::cout << "vvvvvvvvvrvrvrvrvrvr" << std::endl;
 		if (std::rand() % 2 == 0) {
-			std::cout << executor.getName() << " has been robotomized with 50/% of success !" << std::endl;
+			std::cout << target_ << " has been robotomized with 50% of success !" << std::endl;
 		} else {
-			std::cout << "the robotization of " << executor.getName() << " has failed !" << std::endl;
+			std::cout << "the robotization of " << target_ << " has failed !" << std::endl;
 		}
 	}
 }
