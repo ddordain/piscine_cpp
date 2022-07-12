@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 16:45:09 by ddordain          #+#    #+#             */
-/*   Updated: 2022/06/16 18:00:10 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/07/12 15:16:36 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Form {
 		Form(std::string, int, int);
 		Form(std::string, bool, int, int);
 		Form(const Form&);
-		~Form();
+		virtual ~Form();
 
 		Form& operator = (const Form&);
 

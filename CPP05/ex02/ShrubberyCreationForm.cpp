@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 18:29:46 by ddordain          #+#    #+#             */
-/*   Updated: 2022/06/16 18:46:00 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/07/12 15:11:24 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,3 @@ void	ShrubberyCreationForm::execute (Bureaucrat const & executor) const {
 		}
 	}
 }
-

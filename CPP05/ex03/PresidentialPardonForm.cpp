@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 17:45:16 by ddordain          #+#    #+#             */
-/*   Updated: 2022/06/16 18:20:55 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/07/12 15:11:59 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,3 @@ void	PresidentialPardonForm::execute (const Bureaucrat& executor) const {
 		std::cout << executor.getName() << " has been forgiven by President Zaphod Beeblebrox" << std::endl;
 	}
 }
-

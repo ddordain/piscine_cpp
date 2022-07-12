@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 18:55:38 by ddordain          #+#    #+#             */
-/*   Updated: 2022/06/16 19:23:19 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/07/12 15:15:25 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Intern::Intern(const Intern& copy) {
 
 Intern::~Intern() {}
 
-Intern&	Intern::operator =(const Intern& intern) {
+Intern&	Intern::operator =(__attribute__((unused)) const Intern& intern) {
 	return *this;
 }
 
