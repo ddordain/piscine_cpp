@@ -6,7 +6,7 @@
 #    By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/25 15:36:31 by ddordain          #+#    #+#              #
-#    Updated: 2022/06/24 17:22:11 by ddordain         ###   ########.fr        #
+#    Updated: 2022/07/13 14:40:03 by ddordain         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,9 +23,9 @@ OBJ		= ./obj
 
 CXX	= c++
 
-CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -pedantic
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -pedantic -MMD
 
-RM = rm -f
+RM = rm -rf
  
 all: $(NAME)
 
@@ -44,8 +44,9 @@ clean:
 
 fclean:	clean
 	$(RM) $(NAME)
-	rm -r $(OBJ)
+	$(RM) $(OBJ)
 
-re:	fclean $(NAME)
+re:	fclean
+	make $(NAME)
 
 .PHONY: all clean fclean re
