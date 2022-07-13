@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 17:21:14 by ddordain          #+#    #+#             */
-/*   Updated: 2022/07/05 16:39:17 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/07/13 15:57:53 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,9 @@ int main(int ac, char **av) {
 	std::string::const_iterator 	startStr = strTmp.begin();
 	std::string::const_iterator		endStr = strTmp.begin();
 	double							buffer;
-
+	double							singleDigit = -1; // if singleDigit, force this print
+	
+	//select the string 
 	while (startStr != strTmp.end() && std::isspace(*startStr)) {
 		startStr++;
 		endStr++;
@@ -38,6 +40,14 @@ int main(int ac, char **av) {
 		endStr++;
 	}
 	std::string str(startStr, endStr);
+
+	//check for single digit, and signleDigit followed by a non digit
+	if (str.length() == 1 && std::isdigit(str[0])) {
+		singleDigit = strtod(str.c_str(),NULL);
+	} 
+	if (str.length() >= 2 && std::isdigit(str[0]) && !std::isdigit(str[1])) {
+		singleDigit = strtod(str.c_str(),NULL);
+	}
 
 	if (str.length() == 1 && std::isprint(str[0]) && !std::isdigit(str[0])) {
 		buffer = str[0];
@@ -54,7 +64,9 @@ int main(int ac, char **av) {
 
 //char print
 	std::cout << "char : ";
-	if (buffer < CHAR_MIN || buffer > CHAR_MAX || std::isnan(buffer) == true) {
+	if (singleDigit > 0) {
+		std::cout << "not displayable" << std::endl;
+	} else if (buffer < CHAR_MIN || buffer > CHAR_MAX || std::isnan(buffer) == true) {
 		std::cout << "impossible" << std::endl;
 	} else if (std::isprint(buffer) == false) {
 		std::cout << "not diplayable" << std::endl;
@@ -64,7 +76,9 @@ int main(int ac, char **av) {
 
 //int print
 	std::cout << "int : ";
-	if (buffer < INT_MIN || buffer > INT_MAX || std::isnan(buffer) == true || std::isinf(buffer) == true) {
+	if (singleDigit >= 0) {
+		std::cout << static_cast<int>(singleDigit) << std::endl; // not casted... for lecture purpose
+	} else if (buffer < INT_MIN || buffer > INT_MAX || std::isnan(buffer) == true || std::isinf(buffer) == true) {
 		std::cout << "impossible" << std::endl;
 	} else {
 		std::cout << static_cast<int>(buffer) << std::endl;
@@ -72,7 +86,9 @@ int main(int ac, char **av) {
 
 //float print
 	std::cout << "float : ";
-	if (std::isnan(buffer) == true) {
+	if (singleDigit >= 0) {
+		std::cout << static_cast<float>(singleDigit) << std::endl; // not casted... for lecture purpose
+	} else if (std::isnan(buffer) == true) {
 		std::cout << "nanf" << std::endl;
 	} else if (std::isinf(buffer) == true) {
 		if (buffer > 0) {std::cout << "+inff" << std::endl;}
@@ -83,7 +99,9 @@ int main(int ac, char **av) {
 
 //double
 	std::cout << "double : ";
-	if (std::isnan(buffer) == true) {
+	if (singleDigit >= 0) {
+		std::cout << singleDigit << std::endl; // not casted... for lecture purpose
+	} else if (std::isnan(buffer) == true) {
 		std::cout << "nan" << std::endl;
 	} else if (std::isinf(buffer) == true) {
 		if (buffer > 0) {std::cout << "+inf" << std::endl;}

@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 16:50:36 by ddordain          #+#    #+#             */
-/*   Updated: 2022/07/13 14:39:13 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/07/13 16:06:45 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,19 +49,19 @@ void identify(Base &p)
 		tmp = dynamic_cast<A&>(p);
 		std::cout << "A" << std::endl;
 	}
-	catch (std::bad_cast &err) {}
+	catch (std::exception &err) {}
 	try
 	{
 		tmp = dynamic_cast<B&>(p);
 		std::cout << "B" << std::endl;
 	}
-	catch (std::bad_cast &err) {}
+	catch (std::exception &err) {}
 	try
 	{
 		tmp = dynamic_cast<C&>(p);
 		std::cout << "C" << std::endl;
 	}
-	catch (std::bad_cast &err) {}
+	catch (std::exception &err) {}
 }
 
 // void	identify(Base &p)
