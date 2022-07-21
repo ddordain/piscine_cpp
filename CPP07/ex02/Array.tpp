@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 11:53:27 by ddordain          #+#    #+#             */
-/*   Updated: 2022/07/13 14:46:45 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/07/21 20:40:24 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ template <typename T> class Array {
 
 			~Array() {delete [] this->array_;};
 
-			const Array&	operator =(const Array& array) {
+			Array&	operator =(const Array& array) {
 				if (this == &array) {return (*this);}
 				this->array_ = new T[array.n_];
 				this->n_ = array.n_;
@@ -32,7 +32,7 @@ template <typename T> class Array {
 				return (*this);
 			}
 
-			const T&	operator [](const unsigned int i) {
+			T&	operator [](const unsigned int i) {
 				if (i >= this->n_) {throw WrongSize();}
 				else {return (this->array_[i]);}
 			}
