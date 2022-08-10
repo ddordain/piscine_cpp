@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 11:59:19 by ddordain          #+#    #+#             */
-/*   Updated: 2022/07/13 14:48:14 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/08/10 19:48:25 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,18 @@ Span&	Span::operator=(const Span& span) {
 	this->size_ = span.size_;
 	this->vector_ = span.vector_;
 	return (*this);
+}
+
+const char* Span::CannotAddNumber::what() const throw() {
+	return ("Cannot Add Number. Size of span already reached");
+}
+
+const char* Span::CannotAddRange::what() const throw() {
+	return ("Cannot Add Range. Size of span already reached");
+}
+
+const char* Span::CannotComputeDistance::what() const throw() {
+	return ("Cannot Compute Distance. Size of Span too little");
 }
 
 void	Span::addNumber(const int N) {

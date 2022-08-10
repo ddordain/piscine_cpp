@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 13:20:20 by ddordain          #+#    #+#             */
-/*   Updated: 2022/07/13 14:47:47 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/08/10 19:53:17 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 #define MAX 100
 #define MIN 0
 #define RANGE MAX-MIN + 1
-#define SIZE 1000
+// add + 1 
+#define SIZE 11
 
 int main() {
 	srand(time(NULL));

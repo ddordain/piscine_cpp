@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 11:24:56 by ddordain          #+#    #+#             */
-/*   Updated: 2022/07/13 14:48:19 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/08/10 19:47:11 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,15 +36,15 @@ class Span {
 
 	class CannotAddNumber : public std::exception {
 		public:
-			virtual const char* what() const throw() {return ("Cannot Add Number. Size of span already reached");}
+			virtual const char* what() const throw();
 	};
 	class CannotAddRange : public std::exception {
 		public:
-			virtual const char* what() const throw() {return ("Cannot Add Range. Size of span already reached");}
+			virtual const char* what() const throw();
 	};
 	class CannotComputeDistance : public std::exception {
 		public:
-			virtual const char* what() const throw() {return ("Cannot Compute Distance. Size of Span too little");}
+			virtual const char* what() const throw();
 	};
 	private:
 		unsigned int		size_;
